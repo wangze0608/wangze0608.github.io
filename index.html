@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>MyLife</title>
+    <link href="css/mybase.css" rel="stylesheet">
+
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/mine.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            /*弹出导航*/
+            (function(){
+                var oBtn=document.querySelector('#menuIco');
+                var oNav=document.querySelector('#nav');
+                var aLi=document.querySelectorAll('#nav ul li');
+                var bOk=true;
+                oBtn.addEventListener('touchstart',function(){
+                    if(bOk) {
+                        oNav.style.height='8rem';
+                        bOk=false;
+                    }
+                    else{
+                        oNav.style.height=0;
+                        bOk=true;
+                    }
+
+                },false);
+
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].dataset.index=i;
+                    aLi[i].addEventListener('touchstart',function(){
+                        for(var j=0;j<aLi.length;j++){
+                            aLi[j].classList.remove('active');
+                        }
+                        this.classList.add('active');
+                    },false);
+                }
+            })();
+
+
+            /*蒙板*/
+            (function(){
+                var oDiv=document.querySelector('#mask');
+                var oDrag=document.querySelector('#dragBox');
+                    oDiv.addEventListener('touchmove',function(ev){
+                        var x=(ev.targetTouches[0].pageX-135)/40;
+
+                        var y=(ev.targetTouches[0].pageY-oDrag.offsetTop-71)/40;
+                        oDiv.style.WebkitMaskPosition=x+'rem '+y+'rem';
+                        console.log(oDiv.offsetTop);
+                        ev.preventDefault();
+                        console.log('x:'+x+'y'+y);
+                    },false);
+            })();
+        },false);
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="headTie">MyLife</div>
+            <i class="menuIco" id="menuIco"></i>
+            <nav id="nav">
+                <ul>
+                    <li class="active">Home</li>
+                    <li>Photos</li>
+                    <li>Memberr</li>
+                    <li>Visiter</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <div class="swiperBox">
+                <!--轮播图-->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/0.jpg"> </div>
+                        <div class="swiper-slide"><img src="images/1.jpg"> </div>
+                        <div class="swiper-slide"><img src="images/2.jpg"> </div>
+                        <div class="swiper-slide"><img src="images/3.jpg"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <!--<div class="swiper-button-next"></div>-->
+                    <!--<div class="swiper-button-prev"></div>-->
+                </div>
+            </div>
+            <!-- Swiper JS -->
+            <script src="js/swiper.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    slidesPerView: 1,
+                    paginationClickable: true,
+                    autoplay:3000,
+                    autoplayDisableOnInteraction: false,
+                    loop: true
+                });
+            </script>
+
+            <!--轮播图下方蒙板-->
+            <div class="dragBox" id="dragBox" >
+                <div class="mask" id="mask"></div>
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>
