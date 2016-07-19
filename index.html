@@ -44,14 +44,19 @@
             })();
 
 
-            /*蒙板*/
+           /*蒙板*/
             (function(){
                 var oDiv=document.querySelector('#mask');
                 var oDrag=document.querySelector('#dragBox');
                     oDiv.addEventListener('touchmove',function(ev){
                         var x=(ev.targetTouches[0].pageX-135)/40;
 
+                        if(x<-0.17) x=-0.17;
+                        if(x>5) x=5;
+
                         var y=(ev.targetTouches[0].pageY-oDrag.offsetTop-71)/40;
+                        if(y<-0.2) y=-0.2;
+                        if(y>10) y=10;
                         oDiv.style.WebkitMaskPosition=x+'rem '+y+'rem';
                         console.log(oDiv.offsetTop);
                         ev.preventDefault();
