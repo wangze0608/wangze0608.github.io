@@ -86,6 +86,32 @@ nav ul li.active{
     height:100%£»
 }
 
+/*µ¯³öÎÄ×Ö*/
+.Msg{
+    width:16rem;
+    height: 10rem;
+    background:url("../images/5.jpg") no-repeat;
+    background-size:cover;
+}
+.Msg p:nth-child(1){
+    color:#330a66;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 5px #ff6698;
+    line-height:3.5rem;
+    text-align:center;
+}
+.Msg p:nth-child(2){
+    font-size:.7rem;
+    color:#fff;
+    padding:0 1rem;
+    text-shadow: 2px 2px 5px #ff6698;
+    text-align:left;
+}
+
+
+
+
 /*ÍÐ×§ÃÉ°å*/
 .dragBox{
     width: 16rem;

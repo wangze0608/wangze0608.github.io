@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>MyLife</title>
     <link href="css/mybase.css" rel="stylesheet">
-
+    <link href="css/animate.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/mine.js"></script>
@@ -60,7 +60,6 @@
                         oDiv.style.WebkitMaskPosition=x+'rem '+y+'rem';
                         console.log(oDiv.offsetTop);
                         ev.preventDefault();
-                        console.log('x:'+x+'y'+y);
                     },false);
             })();
         },false);
@@ -114,6 +113,12 @@
                     loop: true
                 });
             </script>
+            
+            <!-- 弹出字的块 -->
+            <div class="Msg">
+                <p class="animated fadeInLeft">We are getting married</p>
+                <p class="animated fadeInRight">To have and to hold from this day forward, for better, for worse, for richer, for poorer, in sickness and in health, to love and to cherish, till death do us part</p>
+            </div>
 
             <!--轮播图下方蒙板-->
             <div class="dragBox" id="dragBox" >
