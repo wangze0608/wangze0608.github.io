@@ -13,6 +13,9 @@
     <script src="js/mine.js"></script>
 
     <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
         document.addEventListener('DOMContentLoaded',function(){
             /*弹出导航*/
             (function(){
@@ -82,13 +85,23 @@
 
                 },false);
             })();
+
+            /*head背景色*/
+//            (function(){
+//                var oHead=document.querySelector('header');
+//                setInterval(function(){
+//                    oHead.style.background='rgb('+rnd(0,255)+','+rnd(0,255)+','+rnd(0,255)+')';
+//                },3000);
+//
+//            })();
+
         },false);
     </script>
 </head>
 <body>
     <div id="wrap">
         <header>
-            <audio id="audio" loop ></audio>
+            <audio id="audio" loop></audio>
             <div class="music activeM" id="music"></div>
             <div id="headTie">MyLife</div>
             <i class="menuIco" id="menuIco"></i>
