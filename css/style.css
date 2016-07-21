@@ -1,10 +1,31 @@
+@keyframes Music {
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    100%{
+        transform:rotateY(360deg);
+    }
+}
 header{
     width:16rem;
-    /*height:3.5rem;*/
     background:#fffde8;
     position: relative;
     left: 0;
     top: 0;
+}
+.music{
+    width: 1.05rem;
+    height: 1.75rem;
+    background:url("../images/Music.png") no-repeat;
+    background-size:cover;
+    position: absolute;
+    left:1rem;
+    top:0.6rem;
+    /*animation:2s Music linear infinite;*/
+}
+.activeM{
+    transform:rotate(360deg);
 }
 #headTie{
     width:7.5rem;

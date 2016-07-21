@@ -62,12 +62,34 @@
                         ev.preventDefault();
                     },false);
             })();
+
+            /*音乐播放*/
+            (function(){
+                var oBtn=document.querySelector('#music');
+                var oAudio=document.querySelector('#audio')
+                var bOk=false;
+                oBtn.addEventListener('touchstart',function(){
+                    if(bOk == false){
+                        oAudio.src='sound/1.mp3';
+                        oAudio.play();
+                        oBtn.style.animation='2s Music linear infinite';
+                        bOk=!bOk;
+                    }else{
+                        oAudio.pause();
+                        oBtn.style.animation='';
+                        bOk=!bOk;
+                    }
+
+                },false);
+            })();
         },false);
     </script>
 </head>
 <body>
     <div id="wrap">
         <header>
+            <audio id="audio"></audio>
+            <div class="music activeM" id="music"></div>
             <div id="headTie">MyLife</div>
             <i class="menuIco" id="menuIco"></i>
             <nav id="nav">
