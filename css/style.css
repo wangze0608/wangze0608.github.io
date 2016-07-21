@@ -149,7 +149,7 @@ nav ul li.active{
     width: 16rem;
     height: 16rem;
     background:url("../images/xingxing2.jpg") no-repeat;
-    background-size:contain;
+    background-size:cover;
 }
 
 .mask{
