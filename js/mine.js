@@ -7,5 +7,5 @@
     }
     change();
     win.addEventListener('resize',change,false);
-
+    console.log(222);
 })(window,document);
