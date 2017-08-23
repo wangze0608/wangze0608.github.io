@@ -1,5 +1,5 @@
 /**
- * Created by ÍõÔó on 2016/7/12.
+ * Created by ç‹æ³½ on 2016/7/12.
  */
 ;(function(win,doc){
     function change(){
@@ -7,5 +7,4 @@
     }
     change();
     win.addEventListener('resize',change,false);
-    console.log(222);
 })(window,document);
