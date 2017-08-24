@@ -63,7 +63,7 @@ a img{
     }
 }
 body{
-    background:url("../images/bodybg.png")top center repeat-y;
+    /*background:url("../../images/bodybg.png")top center repeat-y;*/
 }
 header{
     width:16rem;
@@ -214,7 +214,31 @@ nav ul li.active{
 
 }
 
-
+.nav_box{
+    width: 100%;
+    background: #393D49;
+}
+.site-tree{
+    width: 220px;
+}
+.site-content{
+    width: 900px;
+}
+.site-tree,.site-content{
+    display: inline-block;
+    vertical-align: top;
+}
+.layui-tab-item{
+    height: 100%;
+}
+.tab-style{
+    height: 230px;
+    overflow: hidden;
+}
+.tab-style img{
+    height: 100%;
+    width: 100%;
+}
 
 
 

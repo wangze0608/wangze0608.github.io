@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>王泽</title>
+        <link rel="stylesheet" type="text/css" href="./dest/css/commonstyle.min.css" />
+        <link rel="stylesheet" type="text/css" href="./layui/css/layui.css" />
+        <script src="./layui/layui.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./dest/js/mine.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+
+    <body>
+        <div class="nav_box">
+            <div class="layui-container">
+                <!--导航-->
+                <ul class="layui-nav">
+                    <li class="layui-nav-item">
+                        <a href="">My Area</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">My Wife</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">My Friends</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">My Car</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href=""><img src="images/center.jpg" class="layui-nav-img">我</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;">愿你走出半生 未来仍是少年</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">安全管理</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">退了</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-main">
+            <div class="site-tree">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">默认展开</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;">选项1</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">选项2</a>
+                            </dd>
+                            <dd>
+                                <a href="">跳转</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">解决方案</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="">移动模块</a>
+                            </dd>
+                            <dd>
+                                <a href="">后台模版</a>
+                            </dd>
+                            <dd>
+                                <a href="">电商平台</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="">产品</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="">大数据</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="site-content">
+                <!--tab-->
+                <div class="layui-tab layui-tab-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">图一</li>
+                        <li >图二</li>
+                        <li >图三</li>
+                        <li >图四</li>
+                    </ul>
+                    <div class="layui-tab-content tab-style">
+                        <div class="layui-tab-item layui-show"><img src="images/01.jpg"></div>
+                        <div class="layui-tab-item"><img src="images/02.jpg"></div>
+                        <div class="layui-tab-item"><img src="images/03.jpg"></div>
+                        <div class="layui-tab-item"><img src="images/04.jpg"></div>
+                    </div>
+                </div>
+                <!--搜索及表格-->
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">日期</div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="time" required lay-verify="required" placeholder="请选择日期" autocomplete="off" class="layui-input" id="date1">
+                        </div>
+                        <div class="layui-input-inline">
+                            <button class="layui-btn">确定</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </body>
+    <script>
+        layui.use('element', function() {
+            var element = layui.element;
+        });
+        
+        layui.use('laydate',function(){
+            var laydate= layui.laydate;
+            //执行一个实例
+            laydate.render({
+                elem: '#date1'
+            })
+        });
+    </script>
+
+</html>

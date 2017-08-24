@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         },
         //js检测
         jshint: {
-          build: ['Gruntfile.js','js/*.js'],
+          build: ['Gruntfile.js','js/mine.js'],
           options: {
               jshintrc: '.jshintrc'
           }
@@ -63,8 +63,8 @@ module.exports = function(grunt) {
         //watch 监控
         watch: {
             build: {
-                files: ['Gruntfile.js','input/js/*.js','input/css/*.css'],
-                tasks: ['jshint','uglify','cssmin'],
+                files: ['Gruntfile.js','js/*.js','css/*.css'],
+                tasks: ['jshint','uglify','concat','cssmin'],
                 options: {
                     spawn: false
                 }
