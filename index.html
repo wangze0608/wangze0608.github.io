@@ -9,6 +9,14 @@
         <script src="./layui/layui.js" type="text/javascript" charset="utf-8"></script>
         <script src="./dest/js/mine.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <style type="text/css">
+            .layui-input, .layui-select, .layui-textarea {
+                line-height: 1;
+            }
+            .mt30{
+                margin-top:30px;
+            }
+        </style>
     </head>
 
     <body>
@@ -26,7 +34,7 @@
                         <a href="javascript:;">My Friends</a>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">My Car</a>
+                        <a href="javascript:;" class="myCar">My Car</a>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;"><img src="images/center.jpg" class="layui-nav-img">我</a>
@@ -103,19 +111,22 @@
                 </div>
                 <!--搜索及表格-->
                 <form class="layui-form" action="">
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">关键词</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="title" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid layui-word-aux">日期</div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="time" required lay-verify="required" placeholder="请选择日期" autocomplete="off" class="layui-input" id="date1">
-                        </div>
-                        <div class="layui-input-inline">
-                            <button class="layui-btn">确定</button>
-                        </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">关键词</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input">
                     </div>
+                    <div class="layui-form-mid layui-word-aux">日期</div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="time" required lay-verify="required" placeholder="请选择日期" autocomplete="off" class="layui-input" id="date1">
+                    </div>
+                    <div class="layui-input-inline" style="width: auto  ;">
+                        <button class="layui-btn">确定</button>
+                    </div>
+                    <div class="layui-input-inline" style="width:auto;">
+                        <a href="javascript:;" class="layui-btn" id="date2" value="2017:08:28">2017-08-28 - 2017-09-28</a>
+                    </div>
+                </div>
                 </form>
                 <!--table-->
                 <table class="layui-table" lay-size="lg">
@@ -156,16 +167,55 @@
                         </tr>
                     </tbody>
                 </table>
+                <!--分页-->
+                <div id="pages"></div>
                 <!--轮播-->
                 <div class="layui-carousel" id="test2">
-                    <div carousel-item >
+                    <div carousel-item>
                         <div class="tab-style"><img src="images/01.jpg"></div>
                         <div class="tab-style"><img src="images/02.jpg"></div>
                         <div class="tab-style"><img src="images/03.jpg"></div>
                     </div>
                 </div>
-                
-                
+                <!--时间线-->
+                <ul class="layui-timeline mt30">
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                        <div class="layui-timeline-content layui-text">
+                        	<h3 class="layui-timeline-title">2017年08月22日</h3>
+                        	<p>
+                        	    结婚两周年
+                        	</p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                        <div class="layui-timeline-content layui-text">
+                        	<h3 class="layui-timeline-title">2017年03月06日</h3>
+                        	<p>
+                        	    搬家至沙河
+                        	</p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                        <div class="layui-timeline-content layui-text">
+                        	<h3 class="layui-timeline-title">2016年11月31日</h3>
+                        	<p>
+                        	    带小逸回家
+                        	</p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                        <div class="layui-timeline-content layui-text">
+                        	<h3 class="layui-timeline-title">2015年8月22日</h3>
+                        	<p>
+                        	    结婚
+                        	</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </body>
@@ -180,7 +230,17 @@
                 var laydate = layui.laydate;
                 //执行一个实例
                 laydate.render({
-                    elem: '#date1'
+                    elem: '#date1',
+                    range: true,
+                })
+            });
+            layui.use('laydate', function() {
+                var laydate = layui.laydate;
+                //执行一个实例
+                laydate.render({
+                    elem: '#date2',
+                    range: true,
+                    trigger: 'click'
                 })
             });
             //layer
@@ -188,20 +248,20 @@
                 var layer = layui.layer;
             });
             //topbar
-            layui.use('util',function(){
+            layui.use('util', function() {
                 var util = layui.util;
                 //执行
                 util.fixbar({
-                   bar1: true,
-                   click: function(type){
-                       if (type == 'bar1') {
-                          layer.alert('点击了bar1'); 
-                       }
-                   }
+                    bar1: true,
+                    click: function(type) {
+                        if (type == 'bar1') {
+                            layer.alert('点击了bar1');
+                        }
+                    }
                 });
             });
             //carousel
-            layui.use('carousel',function(){
+            layui.use('carousel', function() {
                 var carousel = layui.carousel;
                 //创建实例
                 carousel.render({
@@ -210,19 +270,36 @@
                     height: '200px',
                     arrow: 'hover',
                     anim: 'updown',
-                    autoplay:true,
+                    autoplay: true,
                     index: 0,
-                    loop:true,
-                    interval:3000
+                    loop: true,
+                    interval: 3000
+                });
+            });
+            //分页
+            layui.use('laypage',function(){
+                var laypage = layui.laypage;
+                //创建实例
+                laypage.render({
+                    elem: 'pages',
+                    limit: 5,
+                    limits: [5,10,15,20],
+                    count: 80,
+                    layout:['limit','prev','page','next'],
+                    theme:'#f00',
+                    jump:function(obj,first){
+                        console.log(obj.curr);
+                        console.log(obj.limit);
+                    },
                 });
             });
             //操作
-            $(".side_nav li a").click(function() {
-                layer.open({
-                    title: '标题',
-                    content: $(this).html()
-                });
-            });
+           $(".myCar").click(function(){
+               layer.open({
+                   'title': 'To My CarPage',
+                   content:'wating....'
+               })
+           })
         });
     </script>
 
