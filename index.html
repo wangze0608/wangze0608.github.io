@@ -13,17 +13,19 @@
             .layui-input, .layui-select, .layui-textarea {
                 line-height: 1;
             }
-            .mt30{
-                margin-top:30px;
+            .mt30 {
+                margin-top: 30px;
             }
         </style>
     </head>
 
     <body>
-        <div class="nav_box">
-            <div class="layui-container">
-                <!--导航-->
-                <ul class="layui-nav">
+        <div class="layui-layout layui-layout-admin">
+            <!--导航-->
+            <div class="layui-header">
+                <!--logo-->
+                <div class="layui-logo">layui 后台布局</div>
+                <ul class="layui-nav layui-layout-left">
                     <li class="layui-nav-item">
                         <a href="javascript:;">My Area</a>
                     </li>
@@ -36,25 +38,29 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;" class="myCar">My Car</a>
                     </li>
+                </ul>
+                <ul class="layui-nav layui-layout-right">
                     <li class="layui-nav-item">
                         <a href="javascript:;"><img src="images/center.jpg" class="layui-nav-img">我</a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;">愿你走出半生 未来仍是少年</a>
+                                <a href="javascript:;">愿你走出半生</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">未来仍是少年</a>
                             </dd>
                             <dd>
                                 <a href="javascript:;">安全管理</a>
                             </dd>
-                            <dd>
-                                <a href="javascript:;">退了</a>
-                            </dd>
                         </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">退了</a>
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="layui-main">
-            <div class="site-tree">
+
+            <div class="layui-side layui-bg-black">
                 <ul class="layui-nav layui-nav-tree side_nav" lay-filter="test">
                     <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
                     <li class="layui-nav-item layui-nav-itemed">
@@ -93,129 +99,137 @@
                     </li>
                 </ul>
             </div>
-            <div class="site-content">
-                <!--tab-->
-                <div class="layui-tab layui-tab-brief">
-                    <ul class="layui-tab-title">
-                        <li class="layui-this">Tab1</li>
-                        <li>Tab2</li>
-                        <li>Tab3</li>
-                        <li>Tab4</li>
+            <div class="layui-body">
+                <div style="margin:15px">
+                    <!--tab-->
+                    <div class="layui-tab layui-tab-brief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">Tab1</li>
+                            <li>Tab2</li>
+                            <li>Tab3</li>
+                            <li>Tab4</li>
+                        </ul>
+                        <div class="layui-tab-content tab-style">
+                            <div class="layui-tab-item layui-show"><img src="images/01.jpg"></div>
+                            <div class="layui-tab-item"><img src="images/02.jpg"></div>
+                            <div class="layui-tab-item"><img src="images/03.jpg"></div>
+                            <div class="layui-tab-item"><img src="images/04.jpg"></div>
+                        </div>
+                    </div>
+                    <!--搜索及表格-->
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">关键词</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">日期</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="time" required lay-verify="required" placeholder="请选择日期" autocomplete="off" class="layui-input" id="date1">
+                            </div>
+                            <div class="layui-input-inline" style="width: auto  ;">
+                                <button class="layui-btn">确定</button>
+                            </div>
+                            <div class="layui-input-inline" style="width:auto;">
+                                <a href="javascript:;" class="layui-btn" id="date2" value="2017:08:28">2017-08-28 - 2017-09-28</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!--table-->
+                    <table class="layui-table" lay-size="lg" lay-filter="test">
+                        <colgroup>
+                            <col width="150" />
+                            <col width="200" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>作者</th>
+                                <th>发布时间</th>
+                                <th>状态</th>
+                                <th lay-data="{fixed: 'right', toolbar: '#barDemo'}"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>第一个标题</td>
+                                <td>后台大王</td>
+                                <td>2017-08-25 22:00:00</td>
+                                <td>上线</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>第一个标题</td>
+                                <td>后台大王</td>
+                                <td>2017-08-25 22:00:00</td>
+                                <td>上线</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>3一个标题</td>
+                                <td>后台大王</td>
+                                <td>2017-08-25 22:00:00</td>
+                                <td>上线</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script type="text/html" id="barDemo">
+                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-danger layui-btn-mini" lay-event="edit">删除</a>
+                    </script>
+                    <!--分页-->
+                    <div id="pages"></div>
+                    <!--轮播-->
+                    <div class="layui-carousel" id="test2">
+                        <div carousel-item>
+                            <div class="tab-style"><img src="images/01.jpg"></div>
+                            <div class="tab-style"><img src="images/02.jpg"></div>
+                            <div class="tab-style"><img src="images/03.jpg"></div>
+                        </div>
+                    </div>
+                    <!--时间线-->
+                    <ul class="layui-timeline mt30">
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2017年08月22日</h3>
+                                <p>
+                                    结婚两周年
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2017年03月06日</h3>
+                                <p>
+                                    搬家至沙河
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2016年11月31日</h3>
+                                <p>
+                                    带小逸回家
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2015年8月22日</h3>
+                                <p>
+                                    结婚
+                                </p>
+                            </div>
+                        </li>
                     </ul>
-                    <div class="layui-tab-content tab-style">
-                        <div class="layui-tab-item layui-show"><img src="images/01.jpg"></div>
-                        <div class="layui-tab-item"><img src="images/02.jpg"></div>
-                        <div class="layui-tab-item"><img src="images/03.jpg"></div>
-                        <div class="layui-tab-item"><img src="images/04.jpg"></div>
-                    </div>
                 </div>
-                <!--搜索及表格-->
-                <form class="layui-form" action="">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">关键词</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="title" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">日期</div>
-                    <div class="layui-input-inline">
-                        <input type="text" name="time" required lay-verify="required" placeholder="请选择日期" autocomplete="off" class="layui-input" id="date1">
-                    </div>
-                    <div class="layui-input-inline" style="width: auto  ;">
-                        <button class="layui-btn">确定</button>
-                    </div>
-                    <div class="layui-input-inline" style="width:auto;">
-                        <a href="javascript:;" class="layui-btn" id="date2" value="2017:08:28">2017-08-28 - 2017-09-28</a>
-                    </div>
-                </div>
-                </form>
-                <!--table-->
-                <table class="layui-table" lay-size="lg">
-                    <colgroup>
-                        <col width="150" />
-                        <col width="200" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>标题</th>
-                            <th>作者</th>
-                            <th>发布时间</th>
-                            <th>状态</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>第一个标题</td>
-                            <td>后台大王</td>
-                            <td>2017-08-25 22:00:00</td>
-                            <td>上线</td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>第一个标题</td>
-                            <td>后台大王</td>
-                            <td>2017-08-25 22:00:00</td>
-                            <td>上线</td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>3一个标题</td>
-                            <td>后台大王</td>
-                            <td>2017-08-25 22:00:00</td>
-                            <td>上线</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!--分页-->
-                <div id="pages"></div>
-                <!--轮播-->
-                <div class="layui-carousel" id="test2">
-                    <div carousel-item>
-                        <div class="tab-style"><img src="images/01.jpg"></div>
-                        <div class="tab-style"><img src="images/02.jpg"></div>
-                        <div class="tab-style"><img src="images/03.jpg"></div>
-                    </div>
-                </div>
-                <!--时间线-->
-                <ul class="layui-timeline mt30">
-                    <li class="layui-timeline-item">
-                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
-                        <div class="layui-timeline-content layui-text">
-                        	<h3 class="layui-timeline-title">2017年08月22日</h3>
-                        	<p>
-                        	    结婚两周年
-                        	</p>
-                        </div>
-                    </li>
-                    <li class="layui-timeline-item">
-                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
-                        <div class="layui-timeline-content layui-text">
-                        	<h3 class="layui-timeline-title">2017年03月06日</h3>
-                        	<p>
-                        	    搬家至沙河
-                        	</p>
-                        </div>
-                    </li>
-                    <li class="layui-timeline-item">
-                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
-                        <div class="layui-timeline-content layui-text">
-                        	<h3 class="layui-timeline-title">2016年11月31日</h3>
-                        	<p>
-                        	    带小逸回家
-                        	</p>
-                        </div>
-                    </li>
-                    <li class="layui-timeline-item">
-                        <i class="layui-icon layui-timeline-axis">&#xe63f</i>
-                        <div class="layui-timeline-content layui-text">
-                        	<h3 class="layui-timeline-title">2015年8月22日</h3>
-                        	<p>
-                        	    结婚
-                        	</p>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </body>
@@ -277,29 +291,34 @@
                 });
             });
             //分页
-            layui.use('laypage',function(){
+            layui.use('laypage', function() {
                 var laypage = layui.laypage;
                 //创建实例
                 laypage.render({
                     elem: 'pages',
                     limit: 5,
-                    limits: [5,10,15,20],
+                    limits: [5, 10, 15, 20],
                     count: 80,
-                    layout:['limit','prev','page','next'],
-                    theme:'#f00',
-                    jump:function(obj,first){
+                    layout: ['limit', 'prev', 'page', 'next'],
+                    theme: '#f00',
+                    jump: function(obj, first) {
                         console.log(obj.curr);
                         console.log(obj.limit);
                     },
                 });
             });
+            //监听table
+            //          table.on('tool(test)',function(obj){
+            //              var data= obj.data;
+            //              
+            //          });
             //操作
-           $(".myCar").click(function(){
-               layer.open({
-                   'title': 'To My CarPage',
-                   content:'wating....'
-               })
-           })
+            $(".myCar").click(function() {
+                layer.open({
+                    'title': 'To My CarPage',
+                    content: 'wating....'
+                })
+            })
         });
     </script>
 
