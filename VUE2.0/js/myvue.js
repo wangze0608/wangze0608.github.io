@@ -16,7 +16,7 @@ var vm = new Vue({
 				let scrollHeight = $(document).height();
 				let windowHeight = $(this).height();
 				
-				if(scrollTop + windowHeight  === scrollHeight && self.noMore == false) {
+				if(scrollTop + windowHeight   === scrollHeight && self.noMore == false) {
 					self.getMoreDate();
 				}
 			})

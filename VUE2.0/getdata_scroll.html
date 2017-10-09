@@ -151,10 +151,9 @@
             </a>
         </li>
     </ul>
-    <!--<p v-show="noMore">没有更多数据了</p>-->
-    <p v-if="static == 1">加载中。。。</p>
-    <p v-if="static == 0">没有更多数据</p>
-    <a href="javascript:;" class="sedRequest" @click="getMoreDate">请求</a>
+    <img v-if="static == 1" src="./images/loading.gif" style="width: 30px;height: 30px;display: block;margin:10px auto"></img>
+    <p v-if="static == 0" style="text-align: center;font-size: 14px;color: #999;padding:10px;">没有更多数据</p>
+    <!--<a href="javascript:;" class="sedRequest" @click="getMoreDate">请求</a>-->
 </div>
 <script src="js/myvue.js"></script>
 </body>
