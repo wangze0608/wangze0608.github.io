@@ -151,7 +151,9 @@
             </a>
         </li>
     </ul>
-    <p v-show="noMore">没有更多数据了</p>
+    <!--<p v-show="noMore">没有更多数据了</p>-->
+    <p v-if="static == 1">加载中。。。</p>
+    <p v-if="static == 0">没有更多数据</p>
     <a href="javascript:;" class="sedRequest" @click="getMoreDate">请求</a>
 </div>
 <script src="js/myvue.js"></script>
