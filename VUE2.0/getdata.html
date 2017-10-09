@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/commonstyle.min.css" type="text/css" rel="stylesheet">
+    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vue-resource.min.js" type="text/javascript"></script>
+    <script src="js/iscroll.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="app">
+    <ul class="pic-list" id="pic-list">
+        <li v-for="(item,index) in msgList"  v-bind:class="{video_video2:item.style==8,video_video:item.style == 9,video_list3:item.style == 3,video_list:item.style == 6}">
+            <a v-if="item.is_news == 6" v-bind:href="'https://m.qctt.cn'+item.jump_address" class="A ui-link"
+               target="_self">
+                <span class="pic"><img v-bind:src="item.image_url"></span>
+                <p class="title">
+                    {{item.title}}
+                </p>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime" v-if="item.CommuntCount">评论({{item.CommuntCount}})</span>
+                </p>
+            </a>
+            <a v-else-if="item.style == 1" v-bind:href="'https://m.qctt.cn'+item.jump_address" class="A ui-link"
+               target="_self">
+                <span class="pic"><img v-bind:src="item.image_url"></span>
+                <p class="title">
+                    <!--<span class="zhiDing" v-if="item.is_top == 1">置顶</span>-->
+                    <span v-if="item.aritcleType == 2" class="yuanChuang" >原创</span>
+                    <span v-else-if="item.aritcleType == 5" class="tuiJian" >推荐</span>
+                    <span v-else-if="item.aritcleType == 12" class="yuanChuang" >争锋</span>
+                    <span v-else-if="item.aritcleType == 1" class="tuiJian" >热门</span>
+                    {{item.title}}
+                </p>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime">{{item.publishTime}}</span>
+                </p>
+            </a>
+            <a v-else-if="item.style == 5" v-bind:href="'https://m.qctt.cn'+item.jump_address" class="A ui-link"
+               target="_self">
+                <span class="pic"><img v-bind:src="item.image_url"></span>
+                <p class="title"><span class="tuiGuang">推广</span>{{item.title}}</p>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime">{{item.publishTime}}</span>
+                </p>
+            </a>
+
+            <a v-else-if="item.style == 4" v-bind:href="'https://m.qctt.cn'+item.jump_address" target="_self"
+               class="ui-link">
+                <p class="word"><span class="tuiGuang">推广</span>{{item.title}} </p>
+                <div class="video_list_img">
+                    <img v-bind:src="item.link_image">
+                    <span class="video_button"></span>
+                    <span class="video_time"></span>
+                </div>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime">{{item.publishTime}}</span>
+                </p>
+            </a>
+
+            <a v-else-if="item.style == 3" v-bind:href="'https://m.qctt.cn'+item.jump_address" target="_self"
+               class="ui-link">
+                <p class="word">
+                    <span class="zhiDing" v-if="item.is_top == 1">置顶</span>
+                    <span class="yuanChuang" v-else-if="item.articleType == 2">原创</span>
+                    <span class="tuiJian" v-else-if="item.articleType == 5">推荐</span>
+                    <span class="yuanChuang" v-else-if="item.articleType == 12">争锋</span>
+                    <span class="tuiJian" v-else-if="item.articleType == 1">热门</span>
+                    {{item.title}}
+                </p>
+                <div class="clearfix">
+                    <img v-for="item2 in item.picUrlList" v-bind:src="item2">
+                </div>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime">{{item.publishTime}}</span>
+                </p>
+            </a>
+
+            <a v-else-if="item.style == 13" v-bind:href="'https://m.qctt.cn'+item.jump_address" target="_self">
+                <p class="word">
+                    <span class="zhiBo">直播</span>
+                    {{item.title}}
+                </p>
+                <div class="applive_img">
+                    <img v-bint:src="item.image_url">
+                </div>
+            </a>
+
+            <a v-else-if="item.style == 6" v-bind:href="'https://m.qctt.cn'+item.jump_address" target="_self"
+               class="ui-link">
+                <p class="word">
+                    <span class="zhuanTi">专题</span>
+                    {{item.title}}
+                </p>
+                <div class="video_list_img">
+                    <img v-bind:src="item.image_url">
+                    <span class="video_button"></span>
+                    <span class="video_time"></span>
+                </div>
+                <p class="txt">
+                    <span class="date pubtime">更新至第{{item.specialArticleNum}}篇</span>
+                </p>
+            </a>
+
+            <a v-else-if="item.style == 9" v-bind:href="'https://m.qctt.cn'+item.jump_address" target="_self">
+                <p class="word">
+                    <span class="tuiGuang" v-if="item.is_news == 5">推广</span>
+                    <span class="zhiDing" v-else-if="item.is_top == 1">置顶</span>
+                    <span  class="yuanChuang" v-if="item.articleType == 2" >原创</span>
+                    <span class="tuiJian" v-else-if="item.articleType == 5">推荐</span>
+                    {{item.title}}
+                </p>
+                <div class="video_img">
+                    <img v-if="item.is_news == 5" v-bind:src="item.link_image">
+                    <img v-else v-bind:src="item.image_url">
+                    <span class="video_play_button"></span>
+                    <span class="video_time">{{item.lasting}}</span>
+                </div>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime" v-if="item.is_news == 5">{{item.read_count}}次播放</span>
+                    <span class="date pubtime" v-else>{{item.read_number}}次播放</span>
+                </p>
+            </a>
+
+            <a v-else-if="item.style == 8" v-bind:href="'https://m.qctt.cn'+item.jump_address" class="A ui-link"
+               target="_self">
+            <span class="pic">
+            	<img v-bind:src="item.link_image">
+            	<i class="video_time">{{item.lasting}}</i>
+            </span>
+                <p class="title">
+                    {{item.title}}
+                    <span class="tuiGuang" v-if="item.is_news == 5">推广</span>
+                </p>
+                <p class="txt">
+                    <span class="date">{{item.origin}}</span>
+                    <span class="date pubtime">{{item.publishTime}}</span>
+                </p>
+            </a>
+        </li>
+    </ul>
+    <p v-show="noMore">没有更多数据了</p>
+    <a href="javascript:;" class="sedRequest" @click="getMoreDate">请求</a>
+</div>
+<script src="js/myvue.js" type="text/javascript"></script>
+<script>
+
+	var myScroll;
+	var pullDownFlag,pullUpFlag;
+	var pullDown,pullUp;
+	var spinner;
+	function positionJudge(){
+		if(this.y>40){    //判断下拉
+			pullDown.innerHTML = "放开刷新页面";
+			pullDownFlag = 1;
+		}else if(this.y<(this.maxScrollY-40)){   //判断上拉
+			pullUp.innerHTML = "放开刷新页面";
+			pullUpFlag = 1;
+		}
+	}
+	function action(){
+		if(pullDownFlag==1){
+			pullDownAction();
+			pullDown.innerHTML = "下拉刷新…";
+			pullDownFlag = 0;
+		}else if(pullUpFlag==1){
+			pullUpAction();
+			pullUp.innerHTML = "上拉刷新…";
+			pullUpFlag = 0;
+		}
+	}
+	function loaded(){
+		pullDownFlag = 0;
+		pullUpFlag = 0;
+		pullDown = document.getElementById("pullDown");
+		pullUp = document.getElementById("pullUp");
+		spinner = document.getElementById("spinner");
+		myScroll = new IScroll("#app",{
+			probeType: 3,
+//        momentum: false,//关闭惯性滑动
+			mouseWheel: true,//鼠标滑轮开启
+			scrollbars: true,//滚动条可见
+			fadeScrollbars: true,//滚动条渐隐
+			interactiveScrollbars: true,//滚动条可拖动
+			shrinkScrollbars: 'scale', // 当滚动边界之外的滚动条是由少量的收缩
+			useTransform: true,//CSS转化
+			useTransition: true,//CSS过渡
+			bounce: true,//反弹
+			freeScroll: false,//只能在一个方向上滑动
+			startX: 0,
+			startY: 0,
+//        snap: "li",//以 li 为单位
+		});
+		myScroll.on('scroll',positionJudge);
+		myScroll.on("scrollEnd",action);
+	}
+	function pullDownAction(){
+		spinner.style.display = "block";
+		console.log('down');
+		setTimeout(function(){
+			var ul = document.getElementById("list");
+			var lis = ul.getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				lis[i].innerHTML = "下拉刷新";
+			}
+			spinner.style.display = "none";
+			myScroll.refresh();
+		},1000);
+	}
+	function pullUpAction(){
+		spinner.style.display = "block";
+		console.log('up');
+		setTimeout(function(){
+			var ul = document.getElementById("list");
+			var lis = ul.getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				lis[i].innerHTML = "上拉刷新";
+			}
+			spinner.style.display = "none";
+			myScroll.refresh();
+		},1000);
+	}
+	function updatePosition(){
+		pullDown.innerHTML = this.y>>0;
+	}
+	document.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+	}, false);
+
+	document.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+	}, false);
+</script>
+</body>
+</html>

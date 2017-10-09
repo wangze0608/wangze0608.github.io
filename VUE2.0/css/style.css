@@ -1,0 +1,14 @@
+*{margin: 0;pading:0;}
+ul,ol{list-style: none}
+a{text-decoration: none}
+.sedRequest{
+    width:80px;
+    text-align: center;
+    line-height: 30px;
+    height:30px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    margin:20px ;
+    display: block;
+}
