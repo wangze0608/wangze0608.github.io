@@ -1,7 +1,7 @@
 var vm = new Vue({
 	el: "#app",
 	data:{
-		static:'',
+		static:1,
 		msgList:[],
 		page:0,
 		noMore:false,
@@ -47,6 +47,7 @@ var vm = new Vue({
 					if (res.body.data.length > 0 ) {
 						_this.msgList = _this.msgList.concat(res.body.data);
 						_this.page++;
+						this.static = 1;
 					} else {
 						this.static = 0;
 						this.noMore = true;
