@@ -83,8 +83,8 @@ var vm = new Vue({
 				loadDownFn : function(me){
 					
 					$.ajax({
-						type: 'POST',
-						url: './data'+_this.page+'.json',
+						type: 'GET',
+						url: '../data'+_this.page+'.json',
 						dataType: 'json',
 						success: function(data){
 							var arrLen = data.data.length;
