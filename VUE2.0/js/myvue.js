@@ -84,7 +84,7 @@ var vm = new Vue({
 					
 					$.ajax({
 						type: 'GET',
-						url: '../data'+_this.page+'.json',
+						url: './data'+_this.page+'.json',
 						dataType: 'json',
 						success: function(data){
 							var arrLen = data.data.length;
