@@ -45,7 +45,7 @@ var vm = new Vue({
 			var _this = this;
 			if(!this.noMore ) {
 				this.static = 1;
-				this.$http.get('./data'+_this.page+'.json',{id:1,page:_this.page}).then(function (res) {
+				this.$http.get('../data'+_this.page+'.json',{id:1,page:_this.page}).then(function (res) {
 					console.log(res.body.data.length);
 					if (res.body.data.length > 0 ) {
 						_this.msgList = _this.msgList.concat(res.body.data);
