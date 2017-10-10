@@ -9,17 +9,19 @@ var vm = new Vue({
 	},
 	mounted:function () {
 		this.$nextTick(function () {
-			this.getIntDate();
+			// this.getIntDate();
+			this.getDateDrop();
 			var self = this;
-			$(window).scroll(function () {
-				let scrollTop = $(this).scrollTop();
-				let scrollHeight = $(document).height();
-				let windowHeight = $(this).height();
-				
-				if(scrollTop + windowHeight   === scrollHeight && self.noMore == false) {
-					self.getMoreDate();
-				}
-			})
+			
+			// $(window).scroll(function () {
+			// 	let scrollTop = $(this).scrollTop();
+			// 	let scrollHeight = $(document).height();
+			// 	let windowHeight = $(this).height();
+			//
+			// 	if(scrollTop + windowHeight   === scrollHeight && self.noMore == false) {
+			// 		self.getMoreDate();
+			// 	}
+			// })
 		});
 	},
 	watch:{
@@ -39,6 +41,7 @@ var vm = new Vue({
 			});
 		},
 		getMoreDate:function () {
+			console.log('sssss');
 			var _this = this;
 			if(!this.noMore ) {
 				this.static = 1;
@@ -60,5 +63,53 @@ var vm = new Vue({
 			}
 			
 		},
+		getDateDrop:function () {
+			var _this = this;
+			$('#app').dropload({
+				scrollArea : window,
+				domUp : {
+					domClass   : 'dropload-up',
+					domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+					domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
+					domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
+				},
+				domDown : {
+					domClass   : 'dropload-down',
+					domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+					domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
+					domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
+				},
+				
+				loadDownFn : function(me){
+					
+					$.ajax({
+						type: 'POST',
+						url: './data'+_this.page+'.json',
+						dataType: 'json',
+						success: function(data){
+							var arrLen = data.data.length;
+							if(arrLen > 0){
+								_this.msgList = _this.msgList.concat(data.data);
+								console.log(_this.msgList);
+								_this.page++;
+							}else{
+								// 锁定
+								me.lock();
+								// 无数据
+								me.noData();
+							}
+							// 每次数据插入，必须重置
+							me.resetload();
+						},
+						error: function(xhr, type){
+							alert('Ajax error!');
+							// 即使加载出错，也得重置
+							me.resetload();
+						}
+					});
+				},
+				threshold : 50
+			});
+		}
 	},
 });
