@@ -22,7 +22,7 @@ var video = function video(r) {
 };
 
 exports.default = [{
-  path: '/',
+  path: 'https://wangze0608.github.io/',
   component: _App2.default,
   children: [{
     path: '',

@@ -5,7 +5,7 @@ const video = r => require.ensure([], () => r(require('../page/video/index')), '
 
 
 export default [{
-  path:'/',
+  path:'https://wangze0608.github.io/',
   component:App,
   children: [
     {
