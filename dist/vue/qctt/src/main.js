@@ -20,6 +20,14 @@ var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _iscroll = require('iscroll');
+
+var _iscroll2 = _interopRequireDefault(_iscroll);
+
+var _vueIscrollView = require('vue-iscroll-view');
+
+var _vueIscrollView2 = _interopRequireDefault(_vueIscrollView);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.prototype.$ajax = _axios2.default; // The Vue build version to load with the `import` command
@@ -27,7 +35,7 @@ _vue2.default.prototype.$ajax = _axios2.default; // The Vue build version to loa
 
 _vue2.default.config.productionTip = false;
 
-_vue2.default.use(_vueRouter2.default);
+_vue2.default.use(_vueRouter2.default, _iscroll2.default, _vueIscrollView2.default);
 var router = new _vueRouter2.default({
   routes: _router2.default,
   mode: 'history'
@@ -35,7 +43,6 @@ var router = new _vueRouter2.default({
 
 /* eslint-disable no-new */
 new _vue2.default({
-  router: router,
-  axios: _axios2.default
+  router: router
 }).$mount('#app');
 //# sourceMappingURL=main.js.map

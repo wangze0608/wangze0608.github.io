@@ -15,6 +15,11 @@ var index = function index(r) {
     return r(require('../page/index/index'));
   }, 'index');
 };
+var video = function video(r) {
+  return require.ensure([], function () {
+    return r(require('../page/video/index'));
+  }, 'video');
+};
 
 exports.default = [{
   path: '/',
@@ -27,6 +32,11 @@ exports.default = [{
   {
     path: '/index',
     component: index
+  },
+  /*视频列表*/
+  {
+    path: '/video',
+    component: video
   }]
 }];
 //# sourceMappingURL=router.js.map
