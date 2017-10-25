@@ -5,12 +5,14 @@ import App from './App'
 import routes from './router/router'
 import VueRouter from 'vue-router'
 import axios from 'axios'
+import IScroll from 'iscroll'
+import IScrollView from  'vue-iscroll-view'
 
 
 Vue.prototype.$ajax = axios;
 Vue.config.productionTip = false
 
-Vue.use(VueRouter);
+Vue.use(VueRouter,IScroll,IScrollView);
 const router = new VueRouter({
   routes,
   mode:'history',
@@ -19,5 +21,4 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   router,
-  axios,
 }).$mount('#app');

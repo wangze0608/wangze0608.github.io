@@ -1,0 +1,48 @@
+{
+  "code": 400,
+  "data": [
+    {
+      "name":"头条",
+      "addr":"/index",
+      "checked":true
+    },
+    {
+      "name":"视频",
+      "addr":"/video",
+      "checked":false
+    },
+    {
+      "name":"新车",
+      "addr":"javascript:;",
+      "checked":false
+    },
+    {
+      "name":"行业",
+      "addr":"/index",
+      "checked":false
+    },
+    {
+      "name":"导购",
+      "addr":"/index",
+      "checked":false
+    },
+    {
+      "name":"头条客",
+      "addr":"/index",
+      "checked":false
+    },
+    {
+      "name":"用车",
+      "addr":"/index",
+      "checked":false
+    },
+    {
+      "name":"北京",
+      "addr":"/index",
+      "checked":false
+    }
+
+
+  ],
+  "message": "success"
+}
