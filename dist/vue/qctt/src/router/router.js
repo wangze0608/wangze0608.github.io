@@ -22,7 +22,7 @@ var video = function video(r) {
 };
 
 exports.default = [{
-  path: 'https://wangze0608.github.io/',
+  path: 'https://wangze0608.github.io/vue/qctt/',
   component: _App2.default,
   children: [{
     path: '',

@@ -42,7 +42,6 @@
     mounted(){
       this.$nextTick(function () {
         this.getVideoList();
-        console.log(this)
       })
     },
 
@@ -51,7 +50,6 @@
         var _this = this;
         this.$ajax.get('../../static/video.json')
           .then(function (response) {
-            console.log(response.data.data);
             _this.videoList = response.data.data;
           })
           .catch(function (response) {

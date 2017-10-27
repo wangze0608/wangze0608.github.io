@@ -174,7 +174,6 @@
   import HeaderNav from '../../components/HeaderNav.vue';
   import '../../plugins/swiper.min.js';
   import '../../style/swiper.min.css'
-//  import axios from 'axios';
 
   export default {
     data() {
@@ -195,7 +194,7 @@
         this.getMsg();
 
         /*测试*/
-        this.test()
+//        this.test()
 
       })
 
@@ -206,7 +205,6 @@
         var _this = this;
         this.$ajax.get('../../static/data.json')
           .then(function (response) {
-            console.log(response.data.data);
             _this.msgList = response.data.data;
           })
           .catch(function (responseText) {

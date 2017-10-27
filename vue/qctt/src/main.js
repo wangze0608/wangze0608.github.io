@@ -7,6 +7,8 @@ import VueRouter from 'vue-router'
 import axios from 'axios'
 import IScroll from 'iscroll'
 import IScrollView from  'vue-iscroll-view'
+import store from './store/'
+
 
 
 Vue.prototype.$ajax = axios;
@@ -21,4 +23,5 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   router,
+  store
 }).$mount('#app');

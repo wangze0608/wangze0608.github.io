@@ -28,11 +28,15 @@ var _vueIscrollView = require('vue-iscroll-view');
 
 var _vueIscrollView2 = _interopRequireDefault(_vueIscrollView);
 
+var _store = require('./store/');
+
+var _store2 = _interopRequireDefault(_store);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.prototype.$ajax = _axios2.default; // The Vue build version to load with the `import` command
+// The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-
+_vue2.default.prototype.$ajax = _axios2.default;
 _vue2.default.config.productionTip = false;
 
 _vue2.default.use(_vueRouter2.default, _iscroll2.default, _vueIscrollView2.default);
@@ -43,6 +47,7 @@ var router = new _vueRouter2.default({
 
 /* eslint-disable no-new */
 new _vue2.default({
-  router: router
+  router: router,
+  store: _store2.default
 }).$mount('#app');
 //# sourceMappingURL=main.js.map
