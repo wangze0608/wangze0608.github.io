@@ -22,6 +22,7 @@ const router = new VueRouter({
 
 /* eslint-disable no-new */
 new Vue({
-  router,
-  store
+  router:router,
+  store,
+  render: h => h(App),
 }).$mount('#app');
