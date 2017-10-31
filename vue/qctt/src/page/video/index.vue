@@ -48,7 +48,8 @@
     methods:{
       getVideoList:function () {
         var _this = this;
-        this.$ajax.get('/static/video.json')
+        this.$ajax.get('/wangze/vuebuild/static/video.json')
+//        this.$ajax.get('/static/video.json')
           .then(function (response) {
             _this.videoList = response.data.data;
           })

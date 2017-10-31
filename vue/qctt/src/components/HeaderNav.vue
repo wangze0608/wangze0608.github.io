@@ -3,7 +3,9 @@
   <div class="swiper-nav" >
     <div class="swiper-wrapper">
       <div v-for="(item,index) in navList" class="swiper-slide"  @click="setNavOffset()">
-        <a :href="item.addr" v-text="item.name" @click="setNavChecked(item.nav_index)" :class="{'active':item.nav_index == navChecked }"></a>
+        <!--<a :href="'/wangze/vuebuild'+item.addr" v-text="item.name" @click="setNavChecked(item.nav_index)" :class="{'active':item.nav_index == navChecked }"></a>-->
+        <!--<router-link :to="'/wangze/vuebuild'+item.addr" v-text="item.name" @click.native="setNavChecked(item.nav_index)" :class="{'active':item.nav_index == navChecked }"></router-link>-->
+        <router-link :to="item.addr" v-text="item.name" @click.native="setNavChecked(item.nav_index)" :class="{'active':item.nav_index == navChecked }"></router-link>
       </div>
     </div>
   </div>
@@ -19,7 +21,8 @@
     data () {
       return {
         navList:[],
-        navChecked:"1",
+        navChecked:1,
+        navIndex:1,
         navOffset:0
       }
     },
@@ -61,11 +64,13 @@
             ele.checked = false;
           });
           item.checked = true;
+          console.log(item);
       },
       /*导航列表*/
       getNavList:function () {
         let _this = this;
-        this.$ajax.get('/static/nav.json')
+        this.$ajax.get('/wangze/vuebuild/static/nav.json')
+//        this.$ajax.get('/static/nav.json')
           .then(function (response) {
             _this.navList = response.data.data;
           })
@@ -84,11 +89,16 @@
       setNavChecked:function (index) {
         this.$store.commit('NAV_INDEX',index);
         this.$store.commit('NAV_OFFSET',this.navOffset);
+        this.navList.map(function (ele) {
+          ele.checked = false;
+        })
+        this.navList[index].checked = true;
       },
       /*设置导航偏移量*/
       setNavOffset:function () {
         this.$store.commit('NAV_OFFSET',this.navOffset);
       },
+
     }
 
   }
