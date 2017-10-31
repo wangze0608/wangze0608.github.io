@@ -48,6 +48,7 @@ var router = new _vueRouter2.default({
 /* eslint-disable no-new */
 new _vue2.default({
   router: router,
-  store: _store2.default
+  store: _store2.default,
+  base: '/vuebuild/'
 }).$mount('#app');
 //# sourceMappingURL=main.js.map

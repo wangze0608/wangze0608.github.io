@@ -23,5 +23,6 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   router,
-  store
+  store,
+  base:'/vuebuild/'
 }).$mount('#app');
