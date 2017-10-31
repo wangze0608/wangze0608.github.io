@@ -21,8 +21,7 @@
     data () {
       return {
         navList:[],
-        navChecked:1,
-        navIndex:1,
+        navChecked:0,
         navOffset:0
       }
     },

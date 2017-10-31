@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../../vue/qctt/src/script/test.js"],"names":["test","console","log"],"mappings":";;AAAA,SAASA,IAAT,GAAe;AACb;;AACA,SAAOC,QAAQC,GAAR,CAAY,OAAZ,CAAP;AACD;AACDF","file":"test.js","sourcesContent":["function test(){\n  \"use strict\";\n  return console.log('33333');\n}\ntest();\n"]}
