@@ -41,16 +41,13 @@ _vue2.default.config.productionTip = false;
 
 _vue2.default.use(_vueRouter2.default, _iscroll2.default, _vueIscrollView2.default);
 var router = new _vueRouter2.default({
-  routes: _router2.default,
-  mode: 'history'
+  routes: _router2.default
+  // mode:'history',
 });
 
 /* eslint-disable no-new */
 new _vue2.default({
   router: router,
-  store: _store2.default,
-  render: function render(h) {
-    return h(_App2.default);
-  }
+  store: _store2.default
 }).$mount('#app');
 //# sourceMappingURL=main.js.map

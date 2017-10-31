@@ -203,7 +203,7 @@
     methods: {
       getMsg: function () {
         var _this = this;
-        this.$ajax.get('../../static/data.json')
+        this.$ajax.get('/static/data.json')
           .then(function (response) {
             _this.msgList = response.data.data;
           })

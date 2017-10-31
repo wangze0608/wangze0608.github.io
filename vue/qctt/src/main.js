@@ -17,12 +17,11 @@ Vue.config.productionTip = false
 Vue.use(VueRouter,IScroll,IScrollView);
 const router = new VueRouter({
   routes,
-  mode:'history',
+  // mode:'history',
 });
 
 /* eslint-disable no-new */
 new Vue({
-  router:router,
-  store,
-  render: h => h(App),
+  router,
+  store
 }).$mount('#app');

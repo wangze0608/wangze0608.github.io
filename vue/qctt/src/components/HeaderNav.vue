@@ -65,7 +65,7 @@
       /*导航列表*/
       getNavList:function () {
         let _this = this;
-        this.$ajax.get('../../static/nav.json')
+        this.$ajax.get('/static/nav.json')
           .then(function (response) {
             _this.navList = response.data.data;
           })

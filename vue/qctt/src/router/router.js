@@ -5,7 +5,7 @@ const video = r => require.ensure([], () => r(require('../page/video/index')), '
 
 
 export default [{
-  path:'https://wangze0608.github.io/vue/qctt/',
+  path:'/',
   component:App,
   children: [
     {
