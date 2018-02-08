@@ -9,29 +9,6 @@ const mp = r => require.ensure([], () => r(require('../page/mp/index')), 'mp')
 const usecar = r => require.ensure([], () => r(require('../page/usecar/index')), 'usecar')
 const area = r => require.ensure([], () => r(require('../page/area/index')), 'area')
 
-
-// export default [{
-//   path:'/wangze/vuebuild/',
-//   component:App,
-//   children: [
-//     {
-//       path: '',
-//       redirect: '/wangze/vuebuild/index'
-//     },
-//     /*首页*/
-//     {
-//       path: '/wangze/vuebuild/index',
-//       component: index
-//     },
-//     /*视频列表*/
-//     {
-//       path:'/wangze/vuebuild/video',
-//       component: video
-//     }
-//   ]
-// }]
-
-
 export default [{
   path: '/wangze/vuebuild/',
   component: App,
