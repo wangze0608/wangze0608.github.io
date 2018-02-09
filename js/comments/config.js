@@ -14,10 +14,10 @@ require.config({
 	},
 	shim:{
 		bootstrap:[
-			'css!../plugins/bootstrap-4.0.0/css/bootstrap.css'
+			// 'css!../plugins/bootstrap-4.0.0/css/bootstrap.css'
 		],
 		swiper:[
-			'css!../plugins/swiper4.0/css/swiper-4.1.0.min.css'
+			// 'css!../plugins/swiper4.0/css/swiper-4.1.0.min.css'
 		]
 	}
 });
