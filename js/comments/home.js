@@ -20,7 +20,7 @@ require(['config'],function (config) {
 			coverflowEffect: {
 				rotate: 70,
 				stretch: 0,
-				depth: 200,
+				depth: 50,
 				modifier: 1,
 				slideShadows : true,
 			},
