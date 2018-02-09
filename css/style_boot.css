@@ -19,6 +19,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 .slide-full {
   width: 100%;
@@ -60,10 +61,10 @@ body {
 .slide-full .swiper-slide .slide_x {
   height: 150px;
   top: 220px;
-  left: 0;
   position: absolute;
   box-shadow: 2px 2px 20px #fff;
   -webkit-box-reflect: below 4px -webkit-linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.4));
+  margin: 0;
 }
 .slide-full .swiper-slide .slide_x .swiper-slide {
   background-position: center;
@@ -86,6 +87,7 @@ body {
   background: url("../images/fire.gif") center center no-repeat;
   -webkit-background-size: 100%;
   background-size: 100%;
+  margin: 0;
 }
 .slide-full .swiper-slide .page_title p {
   width: 50%;
@@ -98,6 +100,7 @@ body {
   position: absolute;
   bottom: 70px;
   left: 0;
+  margin: 0;
 }
 .slide-full .swiper-slide .title_bottom p {
   color: #fff;
