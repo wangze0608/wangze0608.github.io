@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 
     <title>愿你走出半生，回首仍是少年</title>
 </head>
@@ -11,17 +12,44 @@
 <link href="css/animate.min.css" rel="stylesheet" type="text/css">
 <link href="css/style_boot.css" rel="stylesheet" type="text/css">
 <link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/share.min.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/swiper.min.js" type="text/javascript"></script>
 <script src="js/swiper.animate1.0.3.min.js" type="text/javascript"></script>
+<script src="js/jquery.share.min.js" type="text/javascript"></script>
+<script src="js/social-share.min.js" type="text/javascript"></script>
 <!--<script src="https://cools.qctt.cn/front/js/require.js" data-main="js/comments/home"></script>-->
+<style>
+    .wei-bo{
+        width: 50px;
+        height: 50px;
+        background: url("images/mask.png") center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .social-share i{
+        font-style: normal;
+        color: #fff;
+    }
+</style>
 <body>
+
 <div class="pos-f-t fixed-top">
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
             <h4 class="text-white">看啥看</h4>
             <span class="text-muted">快合上</span>
+            <div class="social-share" data-initialized="true" data-url="https://wangze0608.github.io/" data-title="走出半生，仍是少年">
+                <a href="#" class="social-share-icon icon-weibo wei-bo"></a>
+                <i>分享至微博</i>
+                <a href="#" class="social-share-icon icon-wechat wei-bo"></a>
+                <i>分享至微信</i>
+                <br>
+                <a href="#" class="social-share-icon icon-qq wei-bo"></a>
+                <i>分享至QQ</i>
+                <a href="#" class="social-share-icon icon-qzone wei-bo"></a>
+                <i>分享至QQ空间</i>
+            </div>
         </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
@@ -44,9 +72,9 @@
 
             <div class="swiper-container slide_x animated flipInX">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/5.jpg"> </div>
-                    <div class="swiper-slide"><img src="images/5.jpg"> </div>
-                    <div class="swiper-slide"><img src="images/2.jpg"> </div>
+                    <div class="swiper-slide"><img src="images/5.jpg"></div>
+                    <div class="swiper-slide"><img src="images/5.jpg"></div>
+                    <div class="swiper-slide"><img src="images/2.jpg"></div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination2"></div>
@@ -59,14 +87,28 @@
             <span class="up_slide"></span>
         </div>
         <div class="swiper-slide">
-            <img src="images/xy1.JPG" style="width: 300px;height: auto;position: absolute;left:50%;margin-left:-150px;top:100px;" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
-            <p class="ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:150px;left:0;">小于姐姐</p>
-            <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.s" swiper-animate-delay="0.6s" style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:80px;left:0;">我美呀美呀美呀</p>
+            <img src="images/xy1.JPG"
+                 style="width: 300px;height: auto;position: absolute;left:50%;margin-left:-150px;top:100px;" class="ani"
+                 swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+            <p class="ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"
+               style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:150px;left:0;">
+                小于姐姐</p>
+            <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.s"
+               swiper-animate-delay="0.6s"
+               style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:80px;left:0;">
+                我美呀美呀美呀</p>
             <span class="up_slide"></span></div>
         <div class="swiper-slide">
-            <img src="images/IMG_2135.JPG" style="width: 300px;height: auto;position: absolute;left:50%;margin-left:-150px;top:100px;" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
-            <p class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:150px;left:0;">小于姐姐</p>
-            <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.s" swiper-animate-delay="0.6s" style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:80px;left:0;">我美呀美呀美呀</p>
+            <img src="images/IMG_2135.JPG"
+                 style="width: 300px;height: auto;position: absolute;left:50%;margin-left:-150px;top:100px;" class="ani"
+                 swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+            <p class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s"
+               style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:150px;left:0;">
+                小于姐姐</p>
+            <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.s"
+               swiper-animate-delay="0.6s"
+               style="width: 100%;height: 40px;color:#fff;font-size:20px;text-align: center;display: block;position: absolute;bottom:80px;left:0;">
+                我美呀美呀美呀</p>
             <span class="up_slide"></span>
         </div>
     </div>
@@ -77,42 +119,42 @@
     $(document).ready(function () {
 
 
-	var swiper = new Swiper('.slide-full', {
-		direction: 'vertical',
-		slidesPerView: 1,
-		spaceBetween: 0,
-		mousewheel: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-            swiperAnimateCache(swiper); //隐藏动画元素
-            swiperAnimate(swiper); //初始化完成开始动画
-        },
-        onSlideChangeEnd: function(swiper){
-            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-        }
-    });
+        var swiper = new Swiper('.slide-full', {
+            direction: 'vertical',
+            slidesPerView: 1,
+            spaceBetween: 0,
+            mousewheel: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            onInit: function (swiper) { //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素
+                swiperAnimate(swiper); //初始化完成开始动画
+            },
+            onSlideChangeEnd: function (swiper) {
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            }
+        });
 
-	var swiper2 = new Swiper('.slide_x', {
-		effect: 'coverflow',
-		grabCursor: true,
-		centeredSlides: true,
-		slidesPerView: 'auto',
-		loop:true,
-		coverflowEffect: {
-			rotate: 70,
-			stretch: 0,
-			depth: 50,
-			modifier: 1,
-			slideShadows : true,
-		},
-		pagination: {
-			el: null,
-		},
-	});
-	});
+        var swiper2 = new Swiper('.slide_x', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            coverflowEffect: {
+                rotate: 70,
+                stretch: 0,
+                depth: 50,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: null,
+            },
+        });
+    });
 </script>
 </body>
 </html>
