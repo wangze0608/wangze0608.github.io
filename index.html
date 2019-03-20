@@ -17,9 +17,11 @@
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/swiper.min.js" type="text/javascript"></script>
 <script src="js/swiper.animate1.0.3.min.js" type="text/javascript"></script>
-<script src="js/jquery.share.min.js" type="text/javascript"></script>
-<script src="js/social-share.min.js" type="text/javascript"></script>
+<!--<script src="js/jquery.share.min.js" type="text/javascript"></script>-->
+<!--<script src="js/social-share.min.js" type="text/javascript"></script>-->
 <!--<script src="https://cools.qctt.cn/front/js/require.js" data-main="js/comments/home"></script>-->
+
+<script src="//open.mobile.qq.com/sdk/qqapi.js"></script>
 <style>
     .wei-bo{
         width: 50px;
@@ -31,8 +33,43 @@
         font-style: normal;
         color: #fff;
     }
+
+
+    .share{
+        width: 100px;
+        height: 30px;
+        background: red;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        line-height: 30px;
+        position: fixed;
+        left:0;
+        top:10px;
+        z-index: 10000000;
+    }
+
+
 </style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	    const share = {
+		    title: '分享标题，最大45字节',
+		    desc: '分享内容，最大60字节',
+		    image_url: '图片URL',
+		    share_url: '分享链接'
+	    };
+	    function test() {
+            console.log('ssss');
+	    }
+	    mqq.data.setShareInfo(share, test);
+    })
+</script>
 <body>
+
+<span class="share" onclick="mqq.ui.showShareMenu();">
+    分享到Qq 空间
+</span>
 
 <div class="pos-f-t fixed-top">
     <div class="collapse" id="navbarToggleExternalContent">
